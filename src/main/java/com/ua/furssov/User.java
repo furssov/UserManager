@@ -1,3 +1,5 @@
+package com.ua.furssov;
+
 public class User {
     private int id;
     private String userName;

@@ -1,3 +1,5 @@
+package com.ua.furssov;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -58,5 +60,6 @@ public class CreateUserServlet extends HttpServlet {
          String username =  request.getParameter("username");
          String password =  request.getParameter("password");
          userDAO.create(new User(username, password));
+         response.sendRedirect("/users/list");
     }
 }
