@@ -5,6 +5,22 @@ public class UserDAO {
 
     private List<User> users = new ArrayList<>();
 
+    private static UserDAO userDaoInstance = null;
+
+    private UserDAO() {
+
+    }
+
+    public static UserDAO getInstance()
+    {
+        if (userDaoInstance == null)
+        {
+            userDaoInstance = new UserDAO();
+            return userDaoInstance;
+        }
+        return userDaoInstance;
+    }
+
     public boolean create(User user)
     {
         if (user != null)
